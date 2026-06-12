@@ -1,0 +1,435 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+    color:#333;
+}
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+header h1{
+    font-size:18px;
+    color:#7b3fc4;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#7a3db8;
+}
+
+#welcomeUser{
+    color:#7a3db8;
+    font-weight:bold;
+}
+
+.logout-btn{
+    background:#7a3db8;
+    color:white;
+    padding:10px 18px;
+    border-radius:5px;
+    text-decoration:none;
+}
+
+.logout-btn:hover{
+    opacity:0.9;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    height:550px;
+    background:url("../images/hero.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:20px;
+    border-radius:15px;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.45);
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    color:white;
+    width:80%;
+    max-width:900px;
+}
+
+.hero h2{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:24px;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:#7a3db8;
+    color:white;
+    text-decoration:none;
+    padding:12px 30px;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#5f2ea0;
+}
+
+/* =========================
+   COURSES SECTION
+========================= */
+
+.courses{
+    padding:50px;
+}
+
+.courses h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:36px;
+}
+
+#courses-container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.course-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.3s;
+}
+
+.course-card:hover{
+    transform:translateY(-5px);
+}
+
+.course-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.course-card h3{
+    margin-bottom:10px;
+}
+
+.course-card p{
+    margin-bottom:10px;
+}
+
+.course-card h4{
+    color:#7a3db8;
+    margin-bottom:15px;
+}
+
+.course-card button{
+    background:#7a3db8;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.course-card button:hover{
+    background:#5f2ea0;
+}
+
+/* =========================
+   LOGIN / REGISTER
+========================= */
+
+.login-container{
+    width:400px;
+    margin:80px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.login-container h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#7a3db8;
+}
+
+.login-container input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.login-container button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#7a3db8;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.login-container button:hover{
+    background:#5f2ea0;
+}
+
+.login-container p{
+    text-align:center;
+    margin-top:15px;
+}
+
+/* =========================
+   PROFILE PAGE
+========================= */
+
+.profile-container{
+    max-width:900px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.profile-container h1{
+    color:#7a3db8;
+    margin-bottom:20px;
+}
+
+/* =========================
+   CART PAGE
+========================= */
+
+#cart-items{
+    max-width:900px;
+    margin:20px auto;
+}
+
+#total{
+    text-align:center;
+    color:#7a3db8;
+    margin:20px;
+}
+
+/* =========================
+   ADMIN PAGE
+========================= */
+
+.admin-container{
+    max-width:1100px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    header h1{
+        font-size:28px;
+        text-align:center;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        height:450px;
+    }
+
+    .hero h2{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .courses{
+        padding:20px;
+    }
+
+    .login-container{
+        width:90%;
+    }
+}
+
+.admin-stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.admin-stats .course-card{
+text-align:center;
+}
+
+.admin-stats h2{
+color:#7a3db8;
+}
+
+#adminCourses{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.site-footer {
+    background: #111;
+    color: #fff;
+    padding: 40px 20px 10px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.site-footer h3,
+.site-footer h4 {
+    color: #00c2ff;
+    margin-bottom: 10px;
+}
+
+.site-footer a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.site-footer a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 5px 10px;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-icons a:hover {
+    color: #00c2ff;
+}
+

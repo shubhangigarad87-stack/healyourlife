@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Healing Your Life - A Different Way</title>
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ✅ RAZORPAY SCRIPT (IMPORTANT) -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Healing Your Life - A Different Way</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">🛒 Cart</a>
+
+        <a href="login.html" id="loginBtn">Login</a>
+
+        <span id="welcomeUser"></span>
+
+        <a href="#" id="logoutBtn">Logout</a>
+
+        <a href="admin.html">Admin</a>
+    </nav>
+
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>Transform Your Mind, Body & Soul</h2>
+        <h3>Developed by Shubhangi Garad</h3>
+        <p>
+            Discover healing courses designed to improve your life.
+        </p>
+
+        <a href="courses.html" class="btn">
+            Explore Courses
+        </a>
+
+    </div>
+
+</section>
+
+<!-- COURSES SECTION -->
+<section class="courses">
+
+    <h2>Our Healing Courses</h2>
+
+    <div id="courses-container">
+        <!-- Courses from database will appear here -->
+    </div>
+
+</section>
+
+<!-- YOUR MAIN JS -->
+<script src="js/script.js"></script>
+
+<!-- LOGIN / LOGOUT UI SCRIPT -->
+<script>
+
+    const user = localStorage.getItem("user");
+
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const welcomeUser = document.getElementById("welcomeUser");
+
+    // Show user info
+    if (user) {
+        welcomeUser.innerHTML = "Welcome, " + user;
+        loginBtn.style.display = "none";
+    } else {
+        welcomeUser.innerHTML = "";
+        logoutBtn.style.display = "none";
+    }
+
+    // Logout
+    logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        alert("Logged Out Successfully");
+        window.location.href = "login.html";
+    });
+
+</script>
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h3>Healing Your Life</h3>
+            <p>
+                Transform your mind, body, and soul through powerful healing courses.
+                Start your journey today.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>Email: support@healinglife.com</p>
+            <p>India</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Shubhangi Garad. All rights reserved.</p>
+    </div>
+
+<div class="social-icons">
+
+    <a href="https://instagram.com/yourprofile" target="_blank">
+        📸 Instagram
+    </a>
+
+    <a href="https://facebook.com/yourprofile" target="_blank">
+        📘 Facebook
+    </a>
+
+</div>    
+
+</footer>
+
+<a href="https://wa.me/919823756395" class="whatsapp-btn" target="_blank">
+    💬 Chat on WhatsApp
+</a>
+
+</body>
+</html>
